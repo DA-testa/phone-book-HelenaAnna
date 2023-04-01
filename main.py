@@ -24,12 +24,12 @@ def process_queries(queries):
             # if we already have contact with such number,
             # we should rewrite contact's name
                   for contact in contacts:
-                if contact.number == cur_query.number:
-                    contact.name = cur_query.name
+                    if contact.number == cur_query.number:
+                        contact.name = cur_query.name
                     break
-            else: # otherwise, just add it
-                contacts.append(cur_query)
-        elif cur_query.type == 'del':
+                else: # otherwise, just add it
+                    contacts.append(cur_query)
+                elif cur_query.type == 'del':
             for j in range(len(contacts)):
                 if contacts[j].number == cur_query.number:
                     contacts.pop(j)
